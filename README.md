@@ -24,7 +24,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/1WOh67_9N3Zwe-eQtdMNGZl
 
 ## Deploy to GitHub Pages
 
-This repository is configured for automatic deployment to GitHub Pages.
+This repository is configured for automatic deployment to GitHub Pages at **http://pubwon.me/AngeliqueMohs/**
 
 ### Setup Instructions
 
@@ -33,18 +33,23 @@ This repository is configured for automatic deployment to GitHub Pages.
    - Navigate to **Settings** → **Pages**
    - Under **Source**, select **GitHub Actions**
 
-2. **Push to main branch:**
-   - The GitHub Actions workflow will automatically build and deploy your site when you push to the `main` branch
-   - Your site will be available at: `https://[username].github.io/[repository-name]/`
+2. **Configure custom domain (if using pubwon.me):**
+   - In **Settings** → **Pages**, under **Custom domain**, enter: `pubwon.me`
+   - GitHub will create a CNAME file automatically
+   - Configure DNS records for your domain to point to GitHub Pages
 
-3. **Manual deployment:**
+3. **Push to main branch:**
+   - The GitHub Actions workflow will automatically build and deploy your site when you push to the `main` branch
+   - Your site will be available at: **http://pubwon.me/AngeliqueMohs/**
+
+4. **Manual deployment:**
    - You can also trigger deployment manually from the **Actions** tab in your repository
 
 ### Configuration
 
-- The base path is automatically configured based on your repository name
-- If you're using a custom domain or deploying to a user/org page, update the `base` path in `vite.config.ts`
+- The base path is configured as `/AngeliqueMohs/` to match the deployment URL
 - The site uses HashRouter, which works perfectly with GitHub Pages static hosting
+- All assets and routes are configured to work with the `/AngeliqueMohs/` base path
 
 ### Build
 
