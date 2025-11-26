@@ -23,7 +23,7 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 
 ## Project Structure
 
-```
+```text
 ├── components/          # Reusable components (Navbar, Footer, CartModal)
 ├── pages/              # Page components (Home, Gallery, About, News, Contact)
 ├── public/images/      # Artwork images
@@ -37,11 +37,13 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 **Prerequisites:** Node.js (v18 or higher recommended)
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -60,7 +62,7 @@ The built files will be in the `dist` directory.
 
 ## Deploy to GitHub Pages
 
-This repository is configured for deployment to GitHub Pages at **http://pubwon.me/AngeliqueMohs/**
+This repository is configured for deployment to GitHub Pages at <http://pubwon.me/AngeliqueMohs/>
 
 ### Configuration
 
@@ -70,17 +72,20 @@ This repository is configured for deployment to GitHub Pages at **http://pubwon.
 
 ### Deployment Options
 
-**Option 1: Manual Deployment**
+#### Option 1: Manual Deployment
+
 1. Build the project: `npm run build`
 2. Copy the contents of the `dist` folder to your GitHub Pages branch
 3. Push to deploy
 
-**Option 2: GitHub Actions (if configured)**
+#### Option 2: GitHub Actions (if configured)
+
 1. Enable GitHub Pages in your repository settings
 2. Set the source to **GitHub Actions**
 3. Push to the `main` branch to trigger automatic deployment
 
-**Option 3: Custom Domain**
+#### Option 3: Custom Domain
+
 - In **Settings** → **Pages**, under **Custom domain**, enter your domain
 - Configure DNS records to point to GitHub Pages
 - The base path configuration will still apply
