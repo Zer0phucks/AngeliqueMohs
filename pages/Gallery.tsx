@@ -71,7 +71,11 @@ const Gallery: React.FC<GalleryProps> = ({ onAddToCart }) => {
                 <div className="mt-4 text-center">
                   <h3 className="font-serif text-lg text-art-900 font-medium">{art.title}</h3>
                   <p className="text-xs text-art-500 uppercase tracking-wide mt-1">{art.category}</p>
-                  <p className="text-art-900 font-bold mt-1">${art.price}</p>
+                  {art.available && (
+                    <span className="inline-block mt-2 text-green-600 text-xs font-medium bg-green-50 px-3 py-1 rounded-full">
+                      Available
+                    </span>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -133,19 +137,26 @@ const Gallery: React.FC<GalleryProps> = ({ onAddToCart }) => {
                 </div>
 
                 <div className="mt-auto">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-serif text-art-900">${selectedArtwork.price}</span>
-                    <span className="text-green-600 text-sm font-medium bg-green-50 px-3 py-1 rounded-full">Available</span>
-                  </div>
-                  <button 
-                    onClick={() => {
-                      onAddToCart(selectedArtwork);
-                      setSelectedArtwork(null);
-                    }}
-                    className="w-full bg-art-900 text-white py-4 px-6 rounded-sm uppercase tracking-widest font-bold hover:bg-art-800 transition-colors flex items-center justify-center gap-2"
-                  >
-                    <ShoppingBag size={18} /> Add to Cart
-                  </button>
+                  {selectedArtwork.available ? (
+                    <>
+                      <div className="flex items-center justify-center mb-6">
+                        <span className="text-green-600 text-sm font-medium bg-green-50 px-3 py-1 rounded-full">Available</span>
+                      </div>
+                      <button 
+                        onClick={() => {
+                          onAddToCart(selectedArtwork);
+                          setSelectedArtwork(null);
+                        }}
+                        className="w-full bg-art-900 text-white py-4 px-6 rounded-sm uppercase tracking-widest font-bold hover:bg-art-800 transition-colors flex items-center justify-center gap-2"
+                      >
+                        <ShoppingBag size={18} /> Add to Cart
+                      </button>
+                    </>
+                  ) : (
+                    <div className="text-center py-4">
+                      <p className="text-art-500 text-sm">This artwork is not currently available for purchase.</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

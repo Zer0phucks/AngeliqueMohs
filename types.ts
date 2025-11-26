@@ -8,6 +8,7 @@ export interface Artwork {
   dimensions: string;
   year: string;
   isSold?: boolean;
+  available?: boolean;
 }
 
 export interface BlogPost {

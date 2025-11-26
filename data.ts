@@ -12,7 +12,8 @@ export const artworks: Artwork[] = [
       'A close portrait of a tiger slipping into a dream state, painted in ember oranges and inky midnight blues.',
     imageUrl: getImageUrl('/images/resting-tiger.jpg'),
     dimensions: '18x24"',
-    year: '2020'
+    year: '2020',
+    available: true
   },
   {
     id: '2',
@@ -23,7 +24,8 @@ export const artworks: Artwork[] = [
       'Angelique\'s white studio cat caught in a lavender haze of floating bubbles and soft afternoon light.',
     imageUrl: getImageUrl('/images/bubble-watcher.jpg'),
     dimensions: '11x14"',
-    year: '2021'
+    year: '2021',
+    available: true
   },
   {
     id: '3',
@@ -34,7 +36,8 @@ export const artworks: Artwork[] = [
       'Jewel-toned pebbles rendered with glassy highlights, inspired by jars of stones collected on road trips.',
     imageUrl: getImageUrl('/images/studio-pebbles.jpg'),
     dimensions: '16x20"',
-    year: '2022'
+    year: '2022',
+    available: true
   },
   {
     id: '4',
@@ -56,7 +59,8 @@ export const artworks: Artwork[] = [
       'An expansive constellation of river stones glowing with neon pinks, sapphires, and emerald greens.',
     imageUrl: getImageUrl('/images/joyous-pebbles.jpg'),
     dimensions: '30x36"',
-    year: '2021'
+    year: '2021',
+    available: true
   },
   {
     id: '6',
@@ -67,7 +71,8 @@ export const artworks: Artwork[] = [
       'A portrait of pure joy—eyes closed, face to the clouds, painted in airy glazes of blue and lilac.',
     imageUrl: getImageUrl('/images/open-sky-portrait.jpg'),
     dimensions: '18x24"',
-    year: '2021'
+    year: '2021',
+    available: true
   },
   {
     id: '7',
@@ -78,7 +83,8 @@ export const artworks: Artwork[] = [
       'A surreal landscape where magenta orchids and windswept trees meet under swirling teal skies.',
     imageUrl: getImageUrl('/images/orchid-grove.jpg'),
     dimensions: '14x14"',
-    year: '2022'
+    year: '2022',
+    available: true
   },
   {
     id: '8',
@@ -89,7 +95,8 @@ export const artworks: Artwork[] = [
       'A regal lion emerging from shadow, modeled in layers of emerald and chartreuse oils.',
     imageUrl: getImageUrl('/images/emerald-lion.jpg'),
     dimensions: '20x24"',
-    year: '2022'
+    year: '2022',
+    available: true
   },
   {
     id: '9',
@@ -100,172 +107,175 @@ export const artworks: Artwork[] = [
       'A still-life of blush tulips glowing inside a glass vase, painted alla prima with soft edges.',
     imageUrl: getImageUrl('/images/three-tulips.jpg'),
     dimensions: '10x10"',
-    year: '2021'
+    year: '2021',
+    available: true
   },
   {
     id: '10',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Serene Reflection',
+    category: 'Portrait',
     price: 850,
     description:
-      'A vibrant composition showcasing the artist\'s unique style and color palette.',
+      'A contemplative portrait capturing quiet moments of introspection and inner peace.',
     imageUrl: getImageUrl('/images/joyousfineart_1504305578_1594553220940073388_5975015959.jpg'),
     dimensions: '16x20"',
     year: '2023'
   },
   {
     id: '11',
-    title: 'Untitled Artwork',
+    title: 'Color Symphony',
     category: 'Abstract',
     price: 920,
     description:
-      'An expressive piece featuring rich textures and dynamic color relationships.',
+      'An expressive piece featuring rich textures and dynamic color relationships that dance across the canvas.',
     imageUrl: getImageUrl('/images/joyousfineart_1504581774_1596870122391653530_5975015959.jpg'),
     dimensions: '18x24"',
     year: '2023'
   },
   {
     id: '12',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Gentle Gaze',
+    category: 'Portrait',
     price: 780,
     description:
-      'A captivating work that explores the interplay of light and form.',
+      'A captivating portrait that explores the interplay of light and form, revealing the subject\'s inner world.',
     imageUrl: getImageUrl('/images/joyousfineart_1505659206_1605908278403321496_5975015959.jpg'),
     dimensions: '14x18"',
     year: '2023'
   },
   {
     id: '13',
-    title: 'Untitled Artwork',
+    title: 'Abstract Flow',
     category: 'Abstract',
     price: 1100,
     description:
-      'A bold composition with striking color contrasts and fluid brushwork.',
+      'A bold composition with striking color contrasts and fluid brushwork that suggests movement and energy.',
     imageUrl: getImageUrl('/images/joyousfineart_1505782419_1606941865403704731_5975015959.jpg'),
     dimensions: '20x24"',
     year: '2023'
   },
   {
     id: '14',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Wildflower Meadow',
+    category: 'Botanical',
     price: 950,
     description:
-      'An intricate piece that invites close observation of its layered details.',
+      'An intricate piece that invites close observation of layered botanical details and natural textures.',
     imageUrl: getImageUrl('/images/joyousfineart_1512950688_1667073657087136339_5975015959.jpg'),
     dimensions: '16x20"',
     year: '2023'
   },
   {
     id: '15',
-    title: 'Untitled Artwork',
+    title: 'Harmony in Motion',
     category: 'Abstract',
     price: 1050,
     description:
-      'A harmonious blend of colors creating a sense of movement and depth.',
+      'A harmonious blend of colors creating a sense of movement and depth across the canvas.',
     imageUrl: getImageUrl('/images/joyousfineart_1516864749_1699907183263954578_5975015959.jpg'),
     dimensions: '18x24"',
     year: '2023'
   },
   {
     id: '16',
-    title: 'Untitled Artwork',
+    title: 'Textural Landscape',
     category: 'Abstract',
     price: 1200,
     description:
-      'A vibrant exploration of texture and color with expressive mark-making.',
+      'A vibrant exploration of texture and color with expressive mark-making that creates a sense of place.',
     imageUrl: getImageUrl('/images/joyousfineart_1616916895_2539205419040271192_5975015959.jpg'),
     dimensions: '20x24"',
-    year: '2024'
+    year: '2024',
+    available: true
   },
   {
     id: '17',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Portrait Study',
+    category: 'Portrait',
     price: 880,
     description:
-      'A contemplative piece that balances bold gestures with subtle nuances.',
+      'A contemplative portrait that balances bold gestures with subtle nuances of expression and character.',
     imageUrl: getImageUrl('/images/joyousfineart_1617342476_2542775450584075262_5975015959.jpg'),
     dimensions: '16x20"',
     year: '2024'
   },
   {
     id: '18',
-    title: 'Untitled Artwork',
+    title: 'Energetic Composition',
     category: 'Abstract',
     price: 1300,
     description:
-      'An energetic composition that captures the essence of creative expression.',
+      'An energetic composition that captures the essence of creative expression through dynamic forms and colors.',
     imageUrl: getImageUrl('/images/joyousfineart_1625553310_2611652918774258395_5975015959.jpg'),
     dimensions: '22x28"',
     year: '2024'
   },
   {
     id: '19',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Portrait of Contemplation',
+    category: 'Portrait',
     price: 1000,
     description:
-      'A sophisticated work that demonstrates masterful color harmony and composition.',
+      'A sophisticated portrait that demonstrates masterful color harmony and composition, revealing deep emotion.',
     imageUrl: getImageUrl('/images/joyousfineart_1631926232_2665112862869352949_5975015959.jpg'),
     dimensions: '18x24"',
     year: '2024'
   },
   {
     id: '20',
-    title: 'Untitled Artwork',
+    title: 'Abstract Rhythm',
     category: 'Abstract',
     price: 1150,
     description:
-      'A dynamic piece that showcases the artist\'s evolving style and technique.',
+      'A dynamic piece that showcases the artist\'s evolving style and technique through rhythmic patterns.',
     imageUrl: getImageUrl('/images/joyousfineart_1645649749_2780234064576408073_5975015959.jpg'),
     dimensions: '20x24"',
     year: '2024'
   },
   {
     id: '21',
-    title: 'Untitled Artwork',
-    category: 'Abstract',
+    title: 'Floral Arrangement',
+    category: 'Botanical',
     price: 990,
     description:
-      'An engaging work that invites viewers to discover new details with each viewing.',
+      'An engaging botanical work that invites viewers to discover new details with each viewing of delicate blooms.',
     imageUrl: getImageUrl('/images/joyousfineart_1648925584_2807713765686931563_5975015959.jpg'),
     dimensions: '16x20"',
     year: '2024'
   },
   {
     id: '22',
-    title: 'Untitled Artwork',
+    title: 'Organic Forms',
     category: 'Abstract',
     price: 1250,
     description:
-      'A compelling composition that balances structure with organic flow.',
+      'A compelling composition that balances structure with organic flow, creating visual harmony.',
     imageUrl: getImageUrl('/images/joyousfineart_1662595407_2922384552052014140_5975015959.jpg'),
     dimensions: '20x24"',
     year: '2024'
   },
   {
     id: '23',
-    title: 'Untitled Artwork',
+    title: 'Celebration of Color',
     category: 'Abstract',
     price: 1100,
     description:
-      'A vibrant piece that celebrates the joy of artistic creation and color.',
+      'A vibrant piece that celebrates the joy of artistic creation and color through bold, expressive strokes.',
     imageUrl: getImageUrl('/images/joyousfineart_1673011850_3009764003379229749_5975015959.jpg'),
     dimensions: '18x24"',
     year: '2024'
   },
   {
     id: '24',
-    title: 'Untitled Artwork',
+    title: 'Contemporary Expression',
     category: 'Abstract',
     price: 1350,
     description:
-      'A contemporary work that pushes the boundaries of abstract expression.',
+      'A contemporary work that pushes the boundaries of abstract expression with innovative techniques and vision.',
     imageUrl: getImageUrl('/images/joyousfineart_1739916666_3571002282428906908_5975015959.webp'),
     dimensions: '24x30"',
-    year: '2025'
+    year: '2025',
+    available: true
   }
 ];
 
