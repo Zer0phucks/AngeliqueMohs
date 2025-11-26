@@ -4,9 +4,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
-    // Get base path from environment variable
-    // For GitHub Pages deployment to http://pubwon.me/AngeliqueMohs/
-    const base = process.env.GITHUB_PAGES_BASE || (mode === 'production' ? '/AngeliqueMohs/' : '/');
+    // Vercel deployment uses root base path
+    const base = '/';
     
     return {
       base,

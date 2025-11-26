@@ -16,7 +16,7 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 - **React 19** - UI framework
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
-- **React Router** - Client-side routing (HashRouter for GitHub Pages compatibility)
+- **React Router** - Client-side routing (BrowserRouter with Vercel rewrites)
 - **Framer Motion** - Animations
 - **Lucide React** - Icons
 - **Tailwind CSS** - Styling (via index.css)
@@ -60,35 +60,52 @@ npm run build
 
 The built files will be in the `dist` directory.
 
-## Deploy to GitHub Pages
+## Deploy to Vercel
 
-This repository is configured for deployment to GitHub Pages at <http://pubwon.me/AngeliqueMohs/>
+This repository is configured for deployment to Vercel.
 
 ### Configuration
 
-- The base path is configured as `/AngeliqueMohs/` in `vite.config.ts`
-- The site uses HashRouter, which works perfectly with GitHub Pages static hosting
-- All assets and routes are configured to work with the `/AngeliqueMohs/` base path
+- The base path is set to `/` in `vite.config.ts`
+- The site uses BrowserRouter for clean URLs
+- A `vercel.json` file handles routing rewrites for client-side routing
 
 ### Deployment Options
 
-#### Option 1: Manual Deployment
+#### Option 1: Vercel CLI
 
-1. Build the project: `npm run build`
-2. Copy the contents of the `dist` folder to your GitHub Pages branch
-3. Push to deploy
+1. Install Vercel CLI globally:
+   ```bash
+   npm i -g vercel
+   ```
 
-#### Option 2: GitHub Actions (if configured)
+2. Deploy:
+   ```bash
+   vercel
+   ```
 
-1. Enable GitHub Pages in your repository settings
-2. Set the source to **GitHub Actions**
-3. Push to the `main` branch to trigger automatic deployment
+3. For production deployment:
+   ```bash
+   vercel --prod
+   ```
+
+#### Option 2: GitHub Integration (Recommended)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click **Add New Project**
+4. Import your GitHub repository
+5. Vercel will automatically detect the Vite configuration
+6. Click **Deploy**
+
+Vercel will automatically deploy on every push to your main branch.
 
 #### Option 3: Custom Domain
 
-- In **Settings** → **Pages**, under **Custom domain**, enter your domain
-- Configure DNS records to point to GitHub Pages
-- The base path configuration will still apply
+1. In your Vercel project dashboard, go to **Settings** → **Domains**
+2. Add your custom domain
+3. Configure DNS records as instructed by Vercel
+4. Vercel will automatically provision SSL certificates
 
 ## Available Scripts
 
