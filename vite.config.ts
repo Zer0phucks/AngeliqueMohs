@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
-    // Get base path from environment variable or use repository name
-    // For GitHub Pages: use '/repo-name/' for project pages or '/' for user/org pages
-    const base = process.env.GITHUB_PAGES_BASE || '/';
+    // Get base path from environment variable
+    // For GitHub Pages deployment to http://pubwon.me/AngeliqueMohs/
+    const base = process.env.GITHUB_PAGES_BASE || (mode === 'production' ? '/AngeliqueMohs/' : '/');
     
     return {
       base,
