@@ -7,7 +7,15 @@ import { getImageUrl } from '../utils/imageUrl';
 
 const Home: React.FC = () => {
   // Select specific impactful artworks for the slider
-  const heroSlides = artworks.filter(art => ['1', '5', '6', '8'].includes(art.id));
+  // Joyous Pebble Field (id: '5') is the default/featured artwork
+  const heroSlides = artworks
+    .filter(art => ['1', '5', '6', '8'].includes(art.id))
+    .sort((a, b) => {
+      // Put '5' (Joyous Pebble Field) first, then maintain order for others
+      if (a.id === '5') return -1;
+      if (b.id === '5') return 1;
+      return 0;
+    });
   const previewHighlights = artworks.filter((art) => ['7', '3', '9'].includes(art.id));
   
   const [currentSlide, setCurrentSlide] = useState(0);
