@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { artworks } from '../data';
+import { getImageUrl } from '../utils/imageUrl';
 
 const Home: React.FC = () => {
   // Select specific impactful artworks for the slider
@@ -163,7 +164,7 @@ const Home: React.FC = () => {
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-art-200 -z-10 rounded-full opacity-50"></div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-art-300 -z-10 rounded-full opacity-50"></div>
             <img 
-              src="/images/angelique-portrait.jpg" 
+              src={getImageUrl('/images/angelique-portrait.jpg')} 
               alt="Angelique Mohs in the studio" 
               className="rounded-sm shadow-xl w-full z-10 relative"
             />

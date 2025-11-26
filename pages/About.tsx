@@ -1,4 +1,5 @@
 import React from 'react';
+import { getImageUrl } from '../utils/imageUrl';
 
 const About: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const About: React.FC = () => {
               <div className="aspect-[3/4] bg-art-200 relative">
                  {/* Artist Photo Placeholder */}
                 <img 
-                  src="/images/angelique-portrait.jpg" 
+                  src={getImageUrl('/images/angelique-portrait.jpg')} 
                   alt="Angelique Mohs" 
                   className="w-full h-full object-cover"
                 />
