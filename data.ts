@@ -20,7 +20,7 @@ export const artworks: Artwork[] = [
     category: 'Wildlife',
     price: 640,
     description:
-      'Angelique's white studio cat caught in a lavender haze of floating bubbles and soft afternoon light.',
+      'Angelique\'s white studio cat caught in a lavender haze of floating bubbles and soft afternoon light.',
     imageUrl: getImageUrl('/images/bubble-watcher.jpg'),
     dimensions: '11x14"',
     year: '2021'
