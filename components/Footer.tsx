@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-start">
             <h4 className="font-serif text-lg font-bold mb-4">Connect</h4>
             <div className="flex space-x-6">
-              <a href="#" className="text-art-300 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/joyousfineart/" target="_blank" rel="noopener noreferrer" className="text-art-300 hover:text-white transition-colors">
                 <Instagram size={24} />
               </a>
               <a href="#" className="text-art-300 hover:text-white transition-colors">
