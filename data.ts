@@ -1,4 +1,4 @@
-import { Artwork, BlogPost } from './types';
+import { Artwork, BlogPost, Event } from './types';
 import { getImageUrl } from './utils/imageUrl';
 import { discoverArtworksSync } from './utils/discoverArtworks';
 
@@ -317,5 +317,62 @@ export const blogPosts: BlogPost[] = [
     content:
       'The Orchid Grove painting began as a plein air sketch of a windswept tree. Adding the oversized blooms made the scene feel almost musical—like the petals were singing back to the clouds.',
     imageUrl: getImageUrl('/images/orchid-grove.jpg')
+  }
+];
+
+export const upcomingEvents: Event[] = [
+  {
+    id: '1',
+    title: 'Spring Gallery Opening',
+    date: new Date('2025-03-15'),
+    time: '6:00 PM - 9:00 PM',
+    location: 'Downtown Art Gallery, San Francisco',
+    description: 'Join us for the opening reception of the Spring Collection featuring new botanical works.',
+    type: 'exhibition'
+  },
+  {
+    id: '2',
+    title: 'Portrait Painting Workshop',
+    date: new Date('2025-03-22'),
+    time: '10:00 AM - 4:00 PM',
+    location: 'Studio Workshop Space',
+    description: 'Learn portrait painting techniques in this hands-on workshop. All skill levels welcome.',
+    type: 'workshop'
+  },
+  {
+    id: '3',
+    title: 'Open Studio Day',
+    date: new Date('2025-04-05'),
+    time: '12:00 PM - 6:00 PM',
+    location: 'Artist Studio',
+    description: 'Visit the studio and see works in progress. Meet the artist and explore the creative process.',
+    type: 'open-studio'
+  },
+  {
+    id: '4',
+    title: 'Art Fair - Spring Market',
+    date: new Date('2025-04-12'),
+    time: '10:00 AM - 6:00 PM',
+    location: 'Golden Gate Park, San Francisco',
+    description: 'Outdoor art fair featuring original works and prints. Special pricing on select pieces.',
+    type: 'sale'
+  },
+  {
+    id: '5',
+    title: 'Wildlife Series Exhibition',
+    date: new Date('2025-05-01'),
+    time: '5:00 PM - 8:00 PM',
+    location: 'Nature Museum Gallery',
+    description: 'Opening reception for the Wildlife Series, showcasing animal portraits and natural scenes.',
+    type: 'exhibition'
+  },
+  {
+    id: '6',
+    title: 'Abstract Techniques Workshop',
+    date: new Date('2025-05-10'),
+    time: '1:00 PM - 5:00 PM',
+    location: 'Community Art Center',
+    description: 'Explore abstract painting techniques and color theory in this interactive workshop.',
+    type: 'workshop'
   }
 ];

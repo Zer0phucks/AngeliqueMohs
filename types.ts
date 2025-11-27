@@ -1,7 +1,7 @@
 export interface Artwork {
   id: string;
   title: string;
-  category: 'Oil' | 'Acrylic' | 'Watercolor' | 'Sketch' | 'Sculpture' | 'Mixed Media';
+  category: 'Wildlife' | 'Abstract' | 'Botanical' | 'Portrait';
   price: number;
   description: string;
   imageUrl: string;
@@ -22,4 +22,14 @@ export interface BlogPost {
 
 export interface CartItem extends Artwork {
   quantity: number;
+}
+
+export interface Event {
+  id: string;
+  title: string;
+  date: Date;
+  time?: string;
+  location?: string;
+  description?: string;
+  type?: 'exhibition' | 'workshop' | 'open-studio' | 'sale' | 'other';
 }
