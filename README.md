@@ -6,6 +6,7 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 
 - **Gallery**: Browse and filter artwork by category (Wildlife, Abstract, Portrait, Botanical)
 - **Shopping Cart**: Add artwork to cart with quantity management
+- **Stripe Payment Processing**: Secure checkout with Stripe
 - **News/Blog**: Read about the artist's latest work and creative process
 - **About**: Learn about the artist
 - **Contact**: Get in touch
@@ -20,6 +21,7 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 - **Framer Motion** - Animations
 - **Lucide React** - Icons
 - **Tailwind CSS** - Styling (via index.css)
+- **Stripe** - Payment processing
 
 ## Project Structure
 
@@ -42,13 +44,73 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
    npm install
    ```
 
-2. Run the development server:
+2. Set up environment variables:
+
+   Create a `.env` file in the root directory with:
+   ```env
+   VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+   STRIPE_SECRET_KEY=sk_test_your_secret_key_here
+   RESEND_API_KEY=re_your_resend_api_key_here
+   ```
+
+   - Get your Stripe keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys)
+   - Get your Resend API key from [Resend Dashboard](https://resend.com/api-keys)
+
+   **Note**: For Vercel deployment, add these as environment variables in your Vercel project settings (Settings → Environment Variables)
+
+3. Run the development server:
 
    ```bash
    npm run dev
    ```
 
-3. Open your browser to `http://localhost:3000`
+4. Open your browser to `http://localhost:3000`
+
+## Stripe Payment & Email Setup
+
+This application uses **Vercel Serverless Functions** for all backend operations - no separate backend server needed!
+
+### Environment Variables
+
+Add these to your `.env` file for local development, and to Vercel project settings for production:
+
+```env
+# Stripe Keys (get from https://dashboard.stripe.com/apikeys)
+VITE_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+
+# Resend API Key (get from https://resend.com/api-keys)
+RESEND_API_KEY=re_...
+
+# Optional: Custom from email domain (defaults to onboarding.resend.dev)
+RESEND_FROM_EMAIL=Portfolio Contact <noreply@yourdomain.com>
+```
+
+### Vercel Serverless Functions
+
+The API routes are already set up in the `api/` directory:
+
+- **`/api/create-checkout-session`** - Creates Stripe checkout sessions
+- **`/api/send-contact-email`** - Sends contact form emails
+- **`/api/send-order-confirmation`** - Sends order confirmation emails
+- **`/api/get-order-details`** - Retrieves order details from Stripe
+
+These automatically work on Vercel - just deploy and they'll be available at `yourdomain.com/api/...`
+
+### Email Configuration
+
+- **Contact Form**: Sends emails to `nsnfrd@gmail.com` and sends confirmation to the user
+- **Order Confirmations**: Sends confirmation emails to customers and notification emails to `nsnfrd@gmail.com`
+
+**Note**: For production, verify your domain with Resend and update the `from` email in the API functions, or set `RESEND_FROM_EMAIL` environment variable.
+
+### Testing
+
+Use Stripe's test cards:
+- Success: `4242 4242 4242 4242`
+- Decline: `4000 0000 0000 0002`
+
+See [Stripe Testing](https://stripe.com/docs/testing) for more test cards.
 
 ## Build
 

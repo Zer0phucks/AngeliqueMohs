@@ -1,6 +1,7 @@
-import React from 'react';
-import { X, Trash2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Trash2, Loader2 } from 'lucide-react';
 import { CartItem } from '../types';
+import { redirectToCheckout } from '../utils/stripe';
 
 interface CartModalProps {
   isOpen: boolean;
@@ -10,9 +11,29 @@ interface CartModalProps {
 }
 
 const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose, items, onRemove }) => {
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   if (!isOpen) return null;
 
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleCheckout = async () => {
+    if (items.length === 0) return;
+
+    setIsProcessing(true);
+    setError(null);
+
+    try {
+      await redirectToCheckout(items);
+      // If successful, the user will be redirected to Stripe Checkout
+      // The cart will be cleared after successful payment (handled by success page)
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError(err instanceof Error ? err.message : 'Failed to process checkout. Please try again.');
+      setIsProcessing(false);
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-[60] overflow-y-auto">
@@ -67,14 +88,27 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose, items, onRemove 
               <div className="w-full">
                 <div className="flex justify-between items-center mb-4 text-lg font-bold">
                   <span>Total</span>
-                  <span>${total}</span>
+                  <span>${total.toFixed(2)}</span>
                 </div>
+                {error && (
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+                    <p className="text-sm text-red-600">{error}</p>
+                  </div>
+                )}
                 <button
                   type="button"
-                  className="inline-flex w-full justify-center rounded-md bg-art-900 px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-art-800 transition-colors"
-                  onClick={() => alert('Proceeding to Stripe Checkout... (Demo)')}
+                  disabled={isProcessing}
+                  className="inline-flex w-full justify-center items-center rounded-md bg-art-900 px-3 py-3 text-sm font-semibold text-white shadow-sm hover:bg-art-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={handleCheckout}
                 >
-                  Checkout
+                  {isProcessing ? (
+                    <>
+                      <Loader2 className="animate-spin mr-2" size={16} />
+                      Processing...
+                    </>
+                  ) : (
+                    'Proceed to Checkout'
+                  )}
                 </button>
               </div>
             </div>

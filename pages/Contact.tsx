@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
+import { sendContactEmail } from '../utils/email';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,16 +9,22 @@ const Contact: React.FC = () => {
     inquiryType: '',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    // Simulate API call
-    setTimeout(() => {
+    setErrorMessage('');
+    
+    try {
+      await sendContactEmail(formData);
       setStatus('success');
       setFormData({ name: '', email: '', inquiryType: '', message: '' });
-    }, 1500);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -45,7 +52,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-serif text-xl font-bold text-art-900">Email</h3>
-                <p className="text-art-600 mt-2">contact@angeliquemohs.com</p>
+                <p className="text-art-600 mt-2">nsnfrd@gmail.com</p>
               </div>
               <div>
                 <h3 className="font-serif text-xl font-bold text-art-900">Commission Status</h3>
@@ -69,6 +76,20 @@ const Contact: React.FC = () => {
                   className="mt-6 text-sm underline text-art-900"
                 >
                   Send another message
+                </button>
+              </div>
+            ) : status === 'error' ? (
+              <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                  <Send className="text-red-600" size={32} />
+                </div>
+                <h3 className="font-serif text-2xl text-art-900 mb-2">Error</h3>
+                <p className="text-art-600 mb-4">{errorMessage}</p>
+                <button 
+                  onClick={() => setStatus('idle')}
+                  className="mt-6 text-sm underline text-art-900"
+                >
+                  Try again
                 </button>
               </div>
             ) : (

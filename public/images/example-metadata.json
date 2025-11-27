@@ -1,0 +1,10 @@
+{
+  "title": "Example Painting Title",
+  "category": "Portrait",
+  "price": 850,
+  "description": "A beautiful description of your artwork that will be displayed when visitors click on it.",
+  "dimensions": "16x20\"",
+  "year": "2024",
+  "available": true
+}
+

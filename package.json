@@ -7,17 +7,22 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "update-images": "node scripts/update-image-list.js"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^2.4.0",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.555.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
-    "lucide-react": "^0.555.0",
-    "framer-motion": "^12.23.24"
+    "resend": "^6.5.2",
+    "stripe": "^14.21.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "@vercel/node": "^3.0.7",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"

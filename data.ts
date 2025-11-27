@@ -1,8 +1,9 @@
 import { Artwork, BlogPost } from './types';
 import { getImageUrl } from './utils/imageUrl';
+import { discoverArtworksSync } from './utils/discoverArtworks';
 
 // Real Angelique Mohs artwork photography copied into /public/images
-export const artworks: Artwork[] = [
+const baseArtworks: Artwork[] = [
   {
     id: '1',
     title: 'Resting Tiger',
@@ -282,6 +283,9 @@ export const artworks: Artwork[] = [
     available: true
   }
 ];
+
+// Auto-discover new images from public/images/ and merge with existing artworks
+export const artworks: Artwork[] = discoverArtworksSync(baseArtworks);
 
 export const blogPosts: BlogPost[] = [
   {

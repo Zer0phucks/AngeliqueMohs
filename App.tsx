@@ -7,6 +7,7 @@ import Gallery from './pages/Gallery';
 import About from './pages/About';
 import News from './pages/News';
 import Contact from './pages/Contact';
+import CheckoutSuccess from './pages/CheckoutSuccess';
 import CartModal from './components/CartModal';
 import { Artwork, CartItem } from './types';
 
@@ -45,6 +46,7 @@ function App() {
             <Route path="/bio" element={<About />} />
             <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/checkout/success" element={<CheckoutSuccess />} />
           </Routes>
         </main>
         
