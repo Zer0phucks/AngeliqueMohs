@@ -30,7 +30,7 @@ const About: React.FC = () => {
             </div>
 
             <div className="w-full md:w-2/3">
-              <h1 className="font-serif text-4xl md:text-5xl text-art-900 mb-8">Angelique Mohs</h1>
+              <h1 className="font-serif text-4xl md:text-5xl text-art-900 mb-8">Bio</h1>
               
               <div className="space-y-6 text-art-700 leading-relaxed font-light text-lg">
                 <p>
@@ -48,14 +48,33 @@ const About: React.FC = () => {
               </div>
 
               <div className="mt-12 pt-8 border-t border-art-100">
-                <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" 
-                  alt="Signature" 
-                  className="h-16 opacity-50" 
-                />
+                <p 
+                  className="text-4xl md:text-5xl text-art-900"
+                  style={{ fontFamily: 'Sacramento, cursive' }}
+                >
+                  Angelique Mohs
+                </p>
               </div>
             </div>
 
+          </div>
+          
+          {/* Additional Portrait Images */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative overflow-hidden rounded-sm shadow-sm">
+              <img 
+                src={getImageUrl('/images/portrait.jpg')} 
+                alt="Portrait by Angelique Mohs" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-sm shadow-sm">
+              <img 
+                src={getImageUrl('/images/portrait_with dog.jpg')} 
+                alt="Portrait with dog by Angelique Mohs" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

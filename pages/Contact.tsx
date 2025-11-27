@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    inquiryType: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -16,11 +16,11 @@ const Contact: React.FC = () => {
     // Simulate API call
     setTimeout(() => {
       setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', inquiryType: '', message: '' });
     }, 1500);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -98,16 +98,22 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-art-700 mb-1">Subject</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
+                  <label htmlFor="inquiryType" className="block text-sm font-medium text-art-700 mb-1">Inquiry Type</label>
+                  <select
+                    name="inquiryType"
+                    id="inquiryType"
                     required
-                    value={formData.subject}
+                    value={formData.inquiryType}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-art-200 rounded-sm focus:ring-1 focus:ring-art-500 focus:border-art-500 bg-art-50"
-                  />
+                  >
+                    <option value="">Select an inquiry type</option>
+                    <option value="general inquiry">General Inquiry</option>
+                    <option value="purchase inquiry">Purchase Inquiry</option>
+                    <option value="commission request">Commission Request</option>
+                    <option value="collaboration">Collaboration</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-art-700 mb-1">Message</label>
