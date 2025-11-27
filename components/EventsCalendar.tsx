@@ -72,7 +72,7 @@ const EventsCalendar: React.FC<EventsCalendarProps> = ({ events }) => {
   return (
     <div className="bg-white rounded-sm shadow-sm border border-art-200 p-6">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-serif text-2xl text-art-900">Upcoming Events</h2>
+        <h2 className="font-serif text-2xl text-art-900">Calendar</h2>
         <Calendar className="text-art-600" size={24} />
       </div>
 
