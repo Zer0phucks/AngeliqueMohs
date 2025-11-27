@@ -48,15 +48,25 @@ A beautiful, modern portfolio website showcasing fine art pieces by Angelique Mo
 
    Create a `.env` file in the root directory with:
    ```env
+   # Frontend variables (exposed to client - safe to include in bundle)
    VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+   VITE_API_URL=/api
+
+   # Backend variables (serverless functions only - NEVER exposed to frontend)
    STRIPE_SECRET_KEY=sk_test_your_secret_key_here
    RESEND_API_KEY=re_your_resend_api_key_here
    ```
 
+   **Important Notes:**
+   - `STRIPE_SECRET_KEY` and `RESEND_API_KEY` are **backend-only** and used by Vercel serverless functions
+   - These backend secrets should **NEVER** have the `VITE_` prefix (only frontend variables use `VITE_`)
    - Get your Stripe keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys)
    - Get your Resend API key from [Resend Dashboard](https://resend.com/api-keys)
 
-   **Note**: For Vercel deployment, add these as environment variables in your Vercel project settings (Settings → Environment Variables)
+   **For Vercel deployment:**
+   - Add all environment variables in your Vercel project settings (Settings → Environment Variables)
+   - Backend variables (`STRIPE_SECRET_KEY`, `RESEND_API_KEY`) are automatically available to serverless functions
+   - Frontend variables (`VITE_STRIPE_PUBLISHABLE_KEY`) are available during build
 
 3. Run the development server:
 
