@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.VITE_STRIPE_PUBLISHABLE_KEY': JSON.stringify(env.VITE_STRIPE_PUBLISHABLE_KEY),
         'process.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL),
-        'process.env.RESEND_API_KEY': JSON.stringify(env.RESEND_API_KEY)
+        // Note: RESEND_API_KEY and STRIPE_SECRET_KEY are backend-only and should NOT be exposed to frontend
       },
       resolve: {
         alias: {
