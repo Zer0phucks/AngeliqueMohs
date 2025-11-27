@@ -122,17 +122,6 @@ export const artworks: Artwork[] = [
     year: '2023'
   },
   {
-    id: '11',
-    title: 'Color Symphony',
-    category: 'Abstract',
-    price: 920,
-    description:
-      'An expressive abstract composition where rich textures and dynamic color relationships create visual music across the canvas. Bold strokes of complementary colors interact and overlap, creating new hues where they meet. The brushwork is energetic and confident, with layers of paint building depth and complexity. The overall effect is harmonious yet vibrant, like a symphony of color in motion.',
-    imageUrl: getImageUrl('/images/abstract.jpg'),
-    dimensions: '18x24"',
-    year: '2023'
-  },
-  {
     id: '12',
     title: 'Gentle Gaze',
     category: 'Portrait',
@@ -223,62 +212,17 @@ export const artworks: Artwork[] = [
   },
   {
     id: '20',
-    title: 'Abstract Rhythm',
-    category: 'Abstract',
+    title: 'Stephen Curry',
+    category: 'Portrait',
     price: 1150,
     description:
-      'A dynamic abstract piece that showcases rhythmic patterns and the artist\'s evolving style. The composition suggests movement and flow, with repeating elements that create visual rhythm across the canvas. The technique demonstrates both control and experimentation, with layers of paint creating depth and complexity. The color choices are bold yet harmonious, creating a sense of visual music that guides the eye through the composition.',
+      'A dynamic portrait capturing the intensity and focus of basketball legend Stephen Curry. The painting showcases the athlete\'s determined expression and signature style, rendered with bold brushstrokes that convey both movement and precision. The composition emphasizes Curry\'s iconic presence, with careful attention to capturing his characteristic features and the energy he brings to the court. The color choices are vibrant yet balanced, creating a powerful representation of one of basketball\'s greatest players.',
     imageUrl: getImageUrl('/images/Gemini_Generated_Image_m5q7y7m5q7y7m5q7.png'),
     dimensions: '20x24"',
     year: '2024'
   },
   {
     id: '21',
-    title: 'Floral Arrangement',
-    category: 'Botanical',
-    price: 990,
-    description:
-      'An engaging botanical still-life featuring a carefully arranged composition of delicate blooms. The painting invites viewers to discover new details with each viewing, from the intricate structure of petals to the subtle variations in color. The flowers are rendered with sensitivity and care, capturing both their beauty and their ephemeral nature. The composition balances naturalism with artistic interpretation, creating a work that celebrates the beauty of flowers.',
-    imageUrl: getImageUrl('/images/flowers.jpg'),
-    dimensions: '16x20"',
-    year: '2024'
-  },
-  {
-    id: '22',
-    title: 'Organic Forms',
-    category: 'Abstract',
-    price: 1250,
-    description:
-      'A compelling abstract composition that balances geometric structure with organic, flowing forms. The painting creates visual harmony through the interaction of these contrasting elements, suggesting both natural growth and human design. The color palette is sophisticated, with colors chosen to enhance the relationship between forms. The overall effect is balanced yet dynamic, creating a sense of visual equilibrium that is both satisfying and intriguing.',
-    imageUrl: getImageUrl('/images/abstract.jpg'),
-    dimensions: '20x24"',
-    year: '2024'
-  },
-  {
-    id: '23',
-    title: 'Celebration of Color',
-    category: 'Abstract',
-    price: 1100,
-    description:
-      'A vibrant abstract work that celebrates the pure joy of artistic creation and color. Bold, expressive strokes of paint create a sense of energy and enthusiasm, as if the artist\'s delight in the act of painting is visible in every mark. The color choices are exuberant and confident, creating a work that radiates positivity and creative energy. The painting invites viewers to share in the joy of making art.',
-    imageUrl: getImageUrl('/images/rose.jpg'),
-    dimensions: '18x24"',
-    year: '2024'
-  },
-  {
-    id: '24',
-    title: 'Contemporary Expression',
-    category: 'Abstract',
-    price: 1350,
-    description:
-      'A large-scale contemporary abstract work that pushes the boundaries of expression through innovative techniques and bold vision. The painting demonstrates the artist\'s willingness to experiment and take risks, creating a work that feels both current and timeless. The composition is complex yet cohesive, with multiple layers of meaning and visual interest. This piece represents the cutting edge of the artist\'s practice, showing where abstract art can go when traditional boundaries are challenged.',
-    imageUrl: getImageUrl('/images/abstract.jpg'),
-    dimensions: '24x30"',
-    year: '2025',
-    available: true
-  },
-  {
-    id: '25',
     title: 'Blue Fish Among Pebbles',
     category: 'Wildlife',
     price: 950,
@@ -290,7 +234,7 @@ export const artworks: Artwork[] = [
     available: true
   },
   {
-    id: '26',
+    id: '22',
     title: 'Nocturnal Reflection',
     category: 'Abstract',
     price: 1100,
@@ -302,7 +246,7 @@ export const artworks: Artwork[] = [
     available: true
   },
   {
-    id: '27',
+    id: '23',
     title: 'Portrait of a Black Dog',
     category: 'Wildlife',
     price: 720,
@@ -314,7 +258,7 @@ export const artworks: Artwork[] = [
     available: true
   },
   {
-    id: '28',
+    id: '24',
     title: 'Still Life Study',
     category: 'Abstract',
     price: 580,
@@ -326,7 +270,7 @@ export const artworks: Artwork[] = [
     available: true
   },
   {
-    id: '29',
+    id: '25',
     title: 'Terrarium Garden',
     category: 'Botanical',
     price: 840,
